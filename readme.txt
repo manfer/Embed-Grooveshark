@@ -4,7 +4,7 @@ Donate link: http://manfersite.tk/embed-grooveshark
 Tags: embed, grooveshark, audio, music, social
 Requires at least: 2.9
 Tested up to: 3.2.1
-Stable tag: 0.0.1
+Stable tag: 0.1
 
 This plugin allows you to embed grooveshark songs and playlists in your posts/pages/widgets with a shortcode.
 
@@ -36,21 +36,28 @@ This plugin is provided as is by manfer (http://manfersite.tk).
 
 == Installation ==
 1. Download and unpack the download package.
-1. Upload the `embed_grooveshark` folder to the '/wp-content/plugins/' directory.
+1. Upload the `embed-grooveshark` folder to the '/wp-content/plugins/' directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. You will now have your "grooveshark" shortcode and widgets available.
 
 = Usage =
-1. On the actual Contact Form 7 configuration page, next to the "Form Box" with code in it, use the drop down click on Generate Tag
-1. Choose *reCAPTCHA* (**not** CAPTCHA) 
-1. copy the code that it gives you
-1. past it into the "Form Box" where the existing code is.
+* After you install this plugin you can start using the shortcode [grooveshark]
+* The available attributes for the shortcode are: type, id, width, height, style, skin, swfobject.
+* Use the content of the shortcode as the alternative content to show to visitors that has not flash available.
+* For a more in detail tutorial and example on how to use the shortcode visit [Embed Grooveshark Homepage](http://www.manfersite.tk/embed-grooveshark "Embed Grooveshark Wordpress plugin").
+* You can use the available Grooveshark Song and Grooveshark Playlist widgets in your sidebars.
 
 If you like the plugin **please rate** it. If you don't like it, **please contact us** so we can address the problem or feature request.
 
 == Screenshots ==
+1. Grooveshark playlist in a wordpress post.
+2. Grooveshark Song Widget.
+3. Grooveshark Playlist Widget.
 
 == Changelog ==
+
+= 0.1 =
+* Initial release.
 
 = Known Issues = 
 
