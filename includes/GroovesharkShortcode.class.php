@@ -12,8 +12,6 @@ class Grooveshark_Shortcode {
 		add_shortcode('grooveshark', array(__CLASS__, 'shortcode'));
 		add_action('init', array(__CLASS__, 'register_script'));
 		add_action('wp_footer', array(__CLASS__, 'print_script'));
-		ini_set("display_errors",1);
-		error_reporting(E_ALL);
 	}
 
 	/**
