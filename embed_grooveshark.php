@@ -3,7 +3,7 @@
 Plugin Name: Embed Grooveshark
 Plugin URI: http://www.manfersite.tk/embed-grooveshark
 Description: Add grooveshark songs or playlists to your posts.
-Version: 0.1
+Version: 0.2
 Author: Fernando San Julián
 Email: manfer.site@gmail.com
 Author URI: http://www.manfersite.tk
@@ -36,6 +36,7 @@ require_once('includes/GroovesharkShortcode.class.php');
 
 require_once('includes/GroovesharkSongWidget.class.php');
 require_once('includes/GroovesharkPlaylistWidget.class.php');
+require_once('includes/GroovesharkSongListWidget.class.php');
 load_plugin_textdomain('embed_grooveshark', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 ?>
