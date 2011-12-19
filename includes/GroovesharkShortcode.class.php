@@ -12,6 +12,8 @@ class Grooveshark_Shortcode {
 		add_shortcode('grooveshark', array(__CLASS__, 'shortcode'));
 		add_action('init', array(__CLASS__, 'register_script'));
 		add_action('wp_footer', array(__CLASS__, 'print_script'));
+		ini_set("display_errors",1);
+		error_reporting(E_ALL);
 	}
 
 	/**
@@ -23,6 +25,7 @@ class Grooveshark_Shortcode {
 			array(
 				'swfobject' => 0,
 				'autoplay'  => 0,
+				'random'    => 0,
 				'width'     => 250,
 				'height'    => 40,
 				'type'      => 'song',
@@ -33,7 +36,7 @@ class Grooveshark_Shortcode {
 			$atts
 		) );
 
-		if ( ! isset($atts['height'] ) && $type == 'playlist' ) $height = 250;
+		if ( ! isset($atts['height'] ) && $type != 'song' ) $height = 250;
 
 		self::$add_js = $swfobject;
  
@@ -42,15 +45,25 @@ class Grooveshark_Shortcode {
 			$widget = 'songWidget.swf';
 			$gstype = 'songIDs';
 			$theme  = 'style=' . $style;
+		} elseif ( $type === 'songlist' ) {
+			$name   = 'asManySongs';
+			$widget = 'widget.swf';
+			$gstype = 'songIDs';
+			$theme  = $skin;
+			$id     = preg_split( "/[\s,]+/", $id );
+			if ( $random ) shuffle( $id );
+			$id     = implode( ",", $id );
 		} else {
 			$name   = 'gsPlaylist' . $id;
 			$widget = 'widget.swf';
 			$gstype = 'playlistID';
 			$theme  = $skin;
-			// I thought I read that texturizer filter was not applied to shortcodes
-			// but it is. So we revert &amp; which code is #038; to & to use in parse_str 
-			parse_str( str_replace("#038;", "&", $skin) );
 		}
+
+
+		// I thought I read that texturizer filter was not applied to shortcodes
+		// but it is. So we revert &amp; which code is #038; to & to use in parse_str 
+		parse_str( str_replace("#038;", "&", $skin) );
 
 		// It is strange someone wants to add same playlist or song to same page.
 		// But to even prevent that case we add uniqueid to the name identifier.
