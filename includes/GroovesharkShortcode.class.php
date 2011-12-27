@@ -68,7 +68,7 @@ class Grooveshark_Shortcode {
 		$name .= '_' . md5( uniqid() );
 
 		$output = <<<WPGROOVESHARK
-		<object width="{$width}" height="{$height}" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="{$name}" name="{$name}"><param name="movie" value="http://grooveshark.com/{$widget}" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&{$gstype}={$id}&{$theme}&p={$autoplay}" /><!--[if !IE]>--><object type="application/x-shockwave-flash" data="http://grooveshark.com/{$widget}" width="{$width}" height="{$height}"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&{$gstype}={$id}&{$theme}&p={$autoplay}" />{$content}</object><!--<![endif]--></object>
+		<object width="{$width}" height="{$height}" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="{$name}" name="{$name}"><param name="movie" value="http://grooveshark.com/{$widget}" /><param name="wmode" value="opaque" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&{$gstype}={$id}&{$theme}&p={$autoplay}" /><!--[if !IE]>--><object type="application/x-shockwave-flash" data="http://grooveshark.com/{$widget}" width="{$width}" height="{$height}"><param name="wmode" value="opaque" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&{$gstype}={$id}&{$theme}&p={$autoplay}" />{$content}</object><!--<![endif]--></object>
 WPGROOVESHARK;
 		if ( $swfobject ) {
 			$output = <<<WPGROOVESHARK
@@ -113,7 +113,7 @@ WPGROOVESHARK;
 		p: {$autoplay}
 	};
 	var params = {
-	  	wmode: "window",
+	  	wmode: "opaque",
 		allowScriptAccess: "always"
 	};
 	var attributes = {
