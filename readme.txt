@@ -4,7 +4,7 @@ Donate link: http://manfersite.tk/embed-grooveshark
 Tags: embed, grooveshark, audio, music, social
 Requires at least: 2.9
 Tested up to: 3.2.1
-Stable tag: 0.2.1
+Stable tag: 0.3
 
 This plugin allows you to embed grooveshark songs and playlists in your posts/pages/widgets with a shortcode.
 
@@ -55,6 +55,9 @@ If you like the plugin **please rate** it. If you don't like it, **please contac
 3. Grooveshark Playlist Widget.
 
 == Changelog ==
+
+= 0.3 =
+* Fixed widget should not go over all content.
 
 = 0.2 =
 * Added a new widget to include a list of songs.
